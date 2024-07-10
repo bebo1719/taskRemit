@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Task Board</title>
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="./assest/css/style.css">
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <h1>Task Board</h1>
+      <p>A simple Kanban board for task management</p>
+      <button class="btn btn-success" data-toggle="modal" data-target="#formModal">Add Task</button>
+    </header>
+    <div class="row">
+      <div class="col-md-4">
+        <h2>To Do</h2>
+        <div id="not-started" class="lane"></div>
+      </div>
+      <div class="col-md-4">
+        <h2>In Progress</h2>
+        <div id="in-progress" class="lane"></div>
+      </div>
+      <div class="col-md-4">
+        <h2>Done</h2>
+        <div id="done" class="lane"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal -->
+  <div class="modal fade" id="formModal" tabindex="-1" aria-labelledby="formModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="formModalLabel">Add New Task</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form id="taskForm">
+            <div class="form-group">
+              <label for="taskTitle">Title</label>
+              <input type="text" class="form-control" id="taskTitle" required>
+            </div>
+            <div class="form-group">
+              <label for="taskDescription">Description</label>
+              <textarea class="form-control" id="taskDescription" rows="3" required></textarea>
+            </div>
+            <div class="form-group">
+              <label for="taskDeadline">Deadline</label>
+              <input type="date" class="form-control" id="taskDeadline" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Save Task</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/dayjs@1.11.3/dayjs.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/dayjs@1.11.3/plugin/customParseFormat.js"></script>
+  <script src="./assest/js/script.js"></script>
+</body>
+</html>
+
